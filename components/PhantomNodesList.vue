@@ -76,7 +76,7 @@ export default {
       return i
     },
     testGetInfo(coin) {
-      console.log('testGetInfo ' + coin.name)
+      // console.log('testGetInfo ' + coin.name)
       const uri = process.env.baseUrl + '/phantomnodes?coin=' + coin.name
        axios.get(uri).then(response => {
         let getInfoData = response.data
@@ -84,7 +84,7 @@ export default {
         this.getinfo = 'Num. of nodes: ' + getInfoData.length + '<br>' +
         'Port: ' + coin.port + '<br>' +
         'Protocol number: ' + coin.protocol_number
-        console.log(getInfoData)
+        // console.log(getInfoData)
 
 
         if (getInfoData.errors) {
