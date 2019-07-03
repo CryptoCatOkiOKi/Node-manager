@@ -1,9 +1,16 @@
 ** Node-manager - 0.0.1
 ======================
 
+### Requires
+* nodejs
+Install:
 ```
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 nvm install node
+```
+
+### Install Node-manager: 
+```
 git clone https://github.com/CryptoCatOkiOKi/Node-manager.git
 cd Node-manager
 npm install --save
