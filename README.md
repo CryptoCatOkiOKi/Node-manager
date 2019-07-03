@@ -2,8 +2,7 @@
 ======================
 
 ### Requires
-* nodejs
-Install:
+Install nodejs (if not already installed):
 ```
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 nvm install node
