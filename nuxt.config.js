@@ -18,11 +18,11 @@ module.exports = {
 
   server: {
     port: 3000, // default: 3000
-    host: '167.86.97.235', // default: localhost
+    host: '0.0.0.0', // default: localhost
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://167.86.97.235:3000'
+    baseUrl: process.env.BASE_URL || 'http://0.0.0.0:3000'
   },
 
   /*
