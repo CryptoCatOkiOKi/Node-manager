@@ -2,14 +2,14 @@
 ======================
 
 ### Requires
-* nodejs
+* nodejs (if not installed)
 Install:
 ```
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 nvm install node
 ```
 
-Install Node-manager: 
+* Install Node-manager: 
 ```
 git clone https://github.com/CryptoCatOkiOKi/Node-manager.git
 cd Node-manager
