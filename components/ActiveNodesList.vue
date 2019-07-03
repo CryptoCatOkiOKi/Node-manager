@@ -63,19 +63,19 @@ export default {
   },
   methods: {
     fetchSysInfo() {
-      const uri = 'http://167.86.97.235:3000/sysInfo'
+      const uri = process.env.baseUrl + '/sysInfo'
       axios.get(uri).then(response => {
         this.sysInfos = response.data
       })      
     },
     fetchNodesCount() {
-      const uri = 'http://167.86.97.235:3000/nodescount'
+      const uri = process.env.baseUrl + '/nodescount'
       axios.get(uri).then(response => {
         this.nodesCount = response.data
       })      
     },
       fetchNodes() {
-      const uri = 'http://167.86.97.235:3000/nodes'
+      const uri = process.env.baseUrl + '/nodes'
       axios.get(uri).then(response => {
         this.nodes = response.data
       })      
@@ -90,7 +90,7 @@ export default {
     testGetInfo(node) {
       this.getinfo = 'Fetching data'
 
-      const uri = 'http://167.86.97.235:3000/getinfo?coin=' + node.name + '&alias=' + node.alias
+      const uri = process.env.baseUrl + 'getinfo?coin=' + node.name + '&alias=' + node.alias
       axios.get(uri).then(response => {
         let getInfoData = response.data
         // this.getinfo = getInfoData      

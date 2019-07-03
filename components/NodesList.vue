@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     fetchTodo() {
-      const uri = 'http://167.86.97.235:3000/wallets'
+      const uri = process.env.baseUrl + '/wallets'
       axios.get(uri).then(response => {
         this.todos = response.data
       })

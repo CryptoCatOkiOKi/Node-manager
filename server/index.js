@@ -115,6 +115,15 @@ async function start() {
     return res.send(list)
   })
 
+  app.get('/serverinfo', async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    const serverIpAddress = req.connection.localAddress.substring(7,req.connection.localAddress.length)
+    const serverPort = req.connection.localPort
+    const serverInfo = `Server IP ${serverIpAddress}:${serverPort}`
+    console.log( serverInfo )
+    return res.send(serverInfo)
+  })
+
   // Give nuxt middleware to express
   app.use(nuxt.render)
 

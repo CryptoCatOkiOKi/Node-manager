@@ -62,20 +62,8 @@ export default {
     this.fetchCoins()
   },
   methods: {
-   //  fetchSysInfo() {
-   //    const uri = 'http://167.86.97.235:3000/sysInfo'
-   //    axios.get(uri).then(response => {
-   //      this.sysInfos = response.data
-   //    })      
-   //  },
-   //  fetchNodesCount() {
-   //    const uri = 'http://167.86.97.235:3000/nodescount'
-   //    axios.get(uri).then(response => {
-   //      this.nodesCount = response.data
-   //    })      
-   //  },
       fetchCoins() {
-      const uri = 'http://167.86.97.235:3000/phantomcoins'
+      const uri = process.env.baseUrl + '/phantomcoins'
       axios.get(uri).then(response => {
         this.coins = response.data
       })      
@@ -89,7 +77,7 @@ export default {
     },
     testGetInfo(coin) {
       console.log('testGetInfo ' + coin.name)
-      const uri = 'http://167.86.97.235:3000/phantomnodes?coin=' + coin.name
+      const uri = process.env.baseUrl + '/phantomnodes?coin=' + coin.name
        axios.get(uri).then(response => {
         let getInfoData = response.data
 

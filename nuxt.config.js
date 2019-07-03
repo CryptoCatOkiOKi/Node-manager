@@ -16,6 +16,15 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  server: {
+    port: 3000, // default: 3000
+    host: '167.86.97.235', // default: localhost
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://167.86.97.235:3000'
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -73,6 +82,6 @@ module.exports = {
   basic: {
     name: 'test',
     pass: 'test1',
-    enabled: process.env.BASIC_ENABLED === 'true' // require boolean value(nullable)
+    enabled: true // require boolean value(nullable)
   }
 }
