@@ -19,6 +19,7 @@ sed -i s/0.0.0.0/${NODEIP}/g nuxt.config.js
 npm run dev
 ```
 
+## Test
 
 
 ## Build Setup
