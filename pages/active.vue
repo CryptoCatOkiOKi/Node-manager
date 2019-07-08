@@ -79,7 +79,7 @@ export default {
 .pluslink:hover,
 .pluslink:active {
   text-decoration: none;
-  color: #000;
+  color: goldenrod;
 }
 
 .list-group-item {

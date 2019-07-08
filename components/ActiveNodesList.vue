@@ -90,7 +90,7 @@ export default {
     testGetInfo(node) {
       this.getinfo = 'Fetching data'
 
-      const uri = process.env.baseUrl + 'getinfo?coin=' + node.name + '&alias=' + node.alias
+      const uri = process.env.baseUrl + '/getinfo?coin=' + node.name + '&alias=' + node.alias
       axios.get(uri).then(response => {
         let getInfoData = response.data
         // this.getinfo = getInfoData      

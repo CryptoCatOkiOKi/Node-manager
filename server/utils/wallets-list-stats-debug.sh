@@ -13,9 +13,9 @@ WALLETBLOCKS=""
 WALLETSTATUS=""
 
 for PID in `ps -ef | grep daemon | grep -v grep | awk '{printf "%d\n", $2}'`; do
-   # echo "PID=${PID}"
+   echo "PID=${PID}"
    PSFULL=$(echo `ps -f -p ${PID} | grep daemon | grep -v grep`)
-   # echo "PSFULL=${PSFULL}"
+   echo "PSFULL=${PSFULL}"
    WALLET=$(echo ${PSFULL} | awk '{printf "%s\n", $8}')
    WALLET=$(echo "${WALLET}" | sed -r 's/.$/-cli/g')
    WALLETNAME=$(echo "${WALLET}" | cut -d"-" -f1)
@@ -30,22 +30,22 @@ for PID in `ps -ef | grep daemon | grep -v grep | awk '{printf "%d\n", $2}'`; do
    WALLET=$(echo ${WALLET} $(echo ${PSFULL} | awk '{printf "%s\n", $9}'))
    WALLET=$(echo ${WALLET} $(echo ${PSFULL} | awk '{printf "%s\n", $10}'))
    WALLET=$(echo ${WALLET} $(echo ${PSFULL} | awk '{printf "%s\n", $11}'))
-   # echo "WALLET=${WALLET}"
+   echo "WALLET=${WALLET}"
 
    WALLETSTATUS=""
    WALLETBLOCKS=""
    WALLETBLOCKS=$(echo `${WALLET} getinfo | jq -r ".blocks"`) 
-   # echo "WALLETBLOCKS=${WALLETBLOCKS}"  
+   echo "WALLETBLOCKS=${WALLETBLOCKS}"  
 
    if [ -z "$WALLETBLOCKS" ]; then
       WALLETSTATUS="NOTWALLET"
-      # echo "WALLETSTATUS=${WALLETSTATUS}"
+      echo "WALLETSTATUS=${WALLETSTATUS}"
    elif  [ $WALLETBLOCKS -gt 0 ]; then
       WALLETSTATUS="OK"
-      # echo "WALLETSTATUS=${WALLETSTATUS}"
+      echo "WALLETSTATUS=${WALLETSTATUS}"
    else
       WALLETSTATUS="ERROR"
-      # echo "WALLETSTATUS=${WALLETSTATUS}"
+      echo "WALLETSTATUS=${WALLETSTATUS}"
    fi   
 
    if [ "$WALLETSTATUS" == "OK" ]; then
@@ -55,8 +55,8 @@ for PID in `ps -ef | grep daemon | grep -v grep | awk '{printf "%d\n", $2}'`; do
       if [ -z "$MNSTATUS" ]; then
          MNACTIVE="false"
          COUNTER_NOT_ACTIVE=$[COUNTER_NOT_ACTIVE + 1]
-         # echo "WALLET=${WALLET}"
-         # echo "MNSTATUS=${MNSTATUS}"
+         echo "WALLET=${WALLET}"
+         echo "MNSTATUS=${MNSTATUS}"
       elif  [ "$MNSTATUS" == "4" ]; then
          MNACTIVE="true"
          COUNTER_ACTIVE=$[COUNTER_ACTIVE + 1]   
@@ -66,8 +66,8 @@ for PID in `ps -ef | grep daemon | grep -v grep | awk '{printf "%d\n", $2}'`; do
       else
          MNACTIVE="false"
          COUNTER_NOT_ACTIVE=$[COUNTER_NOT_ACTIVE + 1]
-         # echo "WALLET=${WALLET}"
-         # echo "MNSTATUS=${MNSTATUS}"
+         echo "WALLET=${WALLET}"
+         echo "MNSTATUS=${MNSTATUS}"
       fi
 
       if  [ $COUNTER == 0 ]; then

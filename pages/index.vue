@@ -15,6 +15,16 @@
       <div v-show="showedHelloWorld">
         <HelloWorld />
       </div>
+      <div class="nodes-button">
+        <nuxt-link to="/addnodes" class="addnodes">
+          <p>Add node(s)</p>
+        </nuxt-link>   
+              </div>  
+              <div class="nodes-button">
+        <nuxt-link to="/test" class="addnodes">
+          <p>Test button</p>
+        </nuxt-link>            
+      </div>
     </div>
   </section>
 </template>
@@ -63,6 +73,7 @@ export default {
   align-items: center;
   text-align: center;
   background-color: darkgrey;
+  color: goldenrod;
 }
 
 .title {
@@ -90,9 +101,10 @@ export default {
 .pluslink,
 .pluslink:visited,
 .pluslink:hover,
-.pluslink:active {
+.pluslink:active 
+.pluslink p {
   text-decoration: none;
-  color: #000;
+  color: goldenrod;
 }
 
 .list-group-item {
@@ -107,4 +119,37 @@ export default {
   background-color: rebeccapurple;
   border-color: rebeccapurple;
 }
+
+.addnodes,
+.addnodes:visited {
+  border-radius: 0.25rem;
+  position: relative;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  color: goldenrod;
+  background-color: rgb(0, 0, 0);
+  border-color: #552b54;
+  text-decoration: none;
+  /* margin-right: 70%; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 1px;
+}
+
+.addnodes p {
+margin-bottom: 0px;
+}
+
+.addnodes:hover,
+.addnodes:active {
+  background-color: #552b54;
+  text-decoration: none;
+}
+
+.nodes-button {
+  float: left;
+}
+
 </style>

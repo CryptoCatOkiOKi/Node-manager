@@ -87,7 +87,7 @@
             @mouseleave="selected = 0"
           >
             Phantom
-            <b-badge variant="danger" pill>
+            <b-badge variant="info" pill>
               {{ nodesPhantomCount }}
             </b-badge>
           </b-list-group-item>
